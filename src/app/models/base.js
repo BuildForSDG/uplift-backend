@@ -25,7 +25,7 @@ class BaseModel {
   /**
      * Returns all the records from the currently attached database table
      */
-  all() {
+  async all() {
     return [
 
     ];
@@ -40,7 +40,7 @@ class BaseModel {
      * search query
      */
 
-  find(obj) {
+  async find(obj) {
     return obj;
   }
 
@@ -50,7 +50,7 @@ class BaseModel {
      *
      * Inserts a record in the current database instance
      */
-  save(obj) {
+  async save(obj) {
     return obj;
   }
 }
