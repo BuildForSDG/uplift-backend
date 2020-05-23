@@ -43,17 +43,17 @@ This API utilises a postgres database for data persistence. To successfully inte
 
 ### Hints
 
--  Run `npm install` or `yarn install` to get started. We'll assume you are using Yarn.
+-     Run `npm install` or `yarn install` to get started. We'll assume you are using Yarn.
 
--  Install additional dependencies: `yarn add <dependency-name> [-D]`.
+-   Install additional dependencies: `yarn add <dependency-name> [-D]`.
 
--  Run tests: `yarn test`.
+-   Run tests: `yarn test`.
 
--  Run tests with test coverage info: `yarn test:cover`.
+-   Run tests with test coverage info: `yarn test:cover`.
 
--  Check the codebase for proper syntax and formatting compliance: `yarn lint`.
+-   Check the codebase for proper syntax and formatting compliance: `yarn lint`.
 
--  Run the app in local dev mode: `yarn start`. This starts the app in development mode making it available at 
+-   Run the app in local dev mode: `yarn start`. This starts the app in development mode making it available at 
 <http://localhost:port>. The port is the one specified in the .env file containing your environment variables.
 
 ## Authors
