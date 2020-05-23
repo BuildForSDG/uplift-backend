@@ -25,9 +25,13 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install -g yarn
-    - name: yarn install and build
+    - name: Install dependencies
     - run: |
         yarn install
+        
+    - name: Run automated tests
+    - run: |
         yarn test:cover
+        
     - name: Upload coverage report to Codacy
     - run: bash <(curl -Ls https://coverage.codacy.com/get.sh)
