@@ -1,3 +1,4 @@
+/* eslint-disable class-methods-use-this */
 class BaseModel {
   /**
      *
@@ -57,4 +58,4 @@ class BaseModel {
   }
 }
 
-export default BaseModel;
+module.exports = BaseModel;
