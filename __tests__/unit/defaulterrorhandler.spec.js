@@ -6,14 +6,14 @@ describe('CatchAllErrorHandler', () => {
   let response;
   let next;
   let error;
+  const consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation();
   beforeEach(() => {
     response = mockResponse();
     next = mockNext();
     error = new Error('error');
-    console.error = jest.fn();
   });
   afterEach(() => {
-    console.error = console.error;
+    consoleErrorSpy.mockRestore();
   });
 
   it('Should return a 500 http reponse when an xhr request encouters an internal server error', async () => {
