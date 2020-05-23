@@ -27,15 +27,15 @@ jobs:
         node-version: ${{ matrix.node-version }}
         
     - name: Install yarn package manager
-    - run: npm install -g yarn
+      run: npm install -g yarn
       
     - name: Install dependencies
-    - run: |
+      run: |
         yarn install
         
     - name: Run automated tests
-    - run: |
+      run: |
         yarn test:cover
         
     - name: Upload coverage report to Codacy
-    - run: bash <(curl -Ls https://coverage.codacy.com/get.sh)
+      run: bash <(curl -Ls https://coverage.codacy.com/get.sh)
