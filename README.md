@@ -45,7 +45,7 @@ This API utilises a postgres database for data persistence. To successfully inte
 
 -  Run `npm install` or `yarn install` to get started. We'll assume you are using Yarn.
 
--   Install additional dependencies: `yarn add <dependency-name> [-D]`.
+-  Install additional dependencies: `yarn add <dependency-name> [-D]`.
 
 -  Run tests: `yarn test`.
 
