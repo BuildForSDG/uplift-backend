@@ -32,9 +32,6 @@
     "test:cover": "jest --coverage",
     "test:watch": "jest --watch"
   },
-  "browserslist": [
-    "last 1 Chrome versions"
-  ],
   "dependencies": {
     "dotenv": "^8.2.0",
     "express": "^4.17.1",

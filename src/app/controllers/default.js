@@ -7,7 +7,7 @@ class DefaultController extends BaseController {
         message: 'Hello from uplift bare skeleton backend'
       });
     } catch (error) {
-      next(error);
+      return next(error);
     }
   }
 }
