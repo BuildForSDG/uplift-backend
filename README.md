@@ -10,15 +10,16 @@ Once this repo has been setup on Codacy by the TTL, replace the above badge with
 
 This is a simple JavaScript starter repo template for setting up your project. The setup contains:
 
-- Jest: For runnung tests. We strongly recommend that JavaScript projects use Jest.
-- Eslint & Prettier: For formatting code to match ESlint AirBnB coding standard. You might need to install the ESlint and Prettier plugins for your code editor to make the most of these utilities.
+-  Jest: For runnung tests. We strongly recommend that JavaScript projects use Jest.
+-  Eslint & Prettier: For formatting code to match ESlint AirBnB coding standard. You might need to install the ESlint and Prettier plugins for your code editor to make the most of these utilities.
 
 ## Why
 
 Talk about what problem this solves, what SDG(s) and SGD targets it addresses and why these are imoirtant.
 
 ## Usage
- How would someone use what you have built, include URLs to the deployed app, service e.t.c when you have it setup.
+
+How would someone use what you have built, include URLs to the deployed app, service e.t.c when you have it setup.
 
 ### Code Structure
 
