@@ -20,9 +20,6 @@ class BaseModel {
      * should have key/value pairs for the column name and its properties respectively
      */
   fields() {
-    return {
-
-    };
   }
 
   /**
