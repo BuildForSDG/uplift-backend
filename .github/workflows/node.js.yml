@@ -23,9 +23,10 @@ jobs:
       
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
+      env:
+        DATABASE_URL: ${{ secrets.DATABASE_URL }}
       with:
         node-version: ${{ matrix.node-version }}
-        DATABASE_URL: ${{ secrets.DATABASE_URL }}
         
     - name: Install yarn package manager
       run: npm install -g yarn
