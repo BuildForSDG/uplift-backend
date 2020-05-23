@@ -4,5 +4,6 @@ docs
 docker
 test
 .vscode
+README.md
 koa/views
 src/generated
