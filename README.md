@@ -10,7 +10,8 @@ Once this repo has been setup on Codacy by the TTL, replace the above badge with
 
 This is a simple JavaScript starter repo template for setting up your project. The setup contains
 
--  Jest: For runnung tests. We strongly recommend that JavaScript projects use Jest
+-  Jest: For runnung tests. We strongly recommend that JavaScript projects use Jest.
+
 -  Eslint & Prettier: For formatting code to match ESlint AirBnB coding standard. You might need to install the ESlint and Prettier plugins for your code editor to make the most of these utilities
 
 ## Why
@@ -38,7 +39,6 @@ After clonning the repo to your local machine and moving into the cloned folder,
 
 All tests should be written in the `__tests__' folder. There's a sample in there.
 
-
 This API utilises a postgres database for data persistence. To successfully integrate the database with the application, its is therefore, required that you have a database setup. You then need to create a .env file at the project root where you will specify database a connection string environment variable named DATABASE_URL with its values containing required connection details to access the database. A sample configuration file has been provided in the project root with examples on how to go about this.
 
 ### Hints
@@ -62,7 +62,7 @@ List the team behind this project. Their names linked to their Github, LinkedIn,
 
 ## Contributing
 If this project sounds interesting to you and you'd like to contribute, thank you!
-First, you can send a mail to buildforsdg@andela.com to indicate your interest, why you'd like to support and what forms of support you can bring to the table, but here are areas we think we'd need the most help in this project :
+First, you can send a mail to <buildforsdg@andela.com> to indicate your interest, why you'd like to support and what forms of support you can bring to the table, but here are areas we think we'd need the most help in this project :
 1.  area one (e.g this app is about human trafficking and you need feedback on your roadmap and feature list from the private sector / NGOs)
 2.  area two (e.g you want people to opt-in and try using your staging app at staging.project-name.com and report any bugs via a form)
 3.  area three (e.g here is the zoom link to our end-of sprint webinar, join and provide feedback as a stakeholder if you can)
