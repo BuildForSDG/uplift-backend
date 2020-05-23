@@ -27,6 +27,7 @@
   },
   "scripts": {
     "lint": "eslint \"src/**/*.js\"",
+    "lint-md": "remark .",
     "start": "nodemon server",
     "test": "jest",
     "test:cover": "jest --coverage",
