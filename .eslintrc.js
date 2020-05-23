@@ -1,6 +1,5 @@
 module.exports = {
   env: {
-    browser: true,
     es6: true,
     node: true,
     jest: true
@@ -15,6 +14,7 @@ module.exports = {
     sourceType: 'module'
   },
   rules: {
+    'no-console': 'off',
     'comma-dangle': ['error', 'never'],
     'no-param-reassign': ['error', { props: false }]
   }

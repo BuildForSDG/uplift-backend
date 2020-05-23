@@ -2,7 +2,6 @@ barebones setup for JavaScript / Node projects replace this with a one-liner phr
 
 [![Codacy Badge](https://img.shields.io/badge/Code%20Quality-D-red)](https://img.shields.io/badge/Code%20Quality-D-red)
 
-
 ## About
 
 What is this project about. Ok to enrich here or the section above it with an image. 
@@ -78,4 +77,3 @@ https://www.albertgao.xyz/2017/05/24/how-to-test-expressjs-with-jest-and-superte
 
 ## LICENSE
 MIT
-
