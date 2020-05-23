@@ -22,6 +22,13 @@ Talk about what problem this solves, what SDG(s) and SGD targets it addresses an
 ## Usage
  How would someone use what you have built, include URLs to the deployed app, service e.t.c when you have it setup
 
+### Code Structure
+
+This application utilises the concepts of Inversion of Control (IOC) and Dependency Injection
+to easily manage dependencies. At the heart of the application is an IOC container within which
+dependecies are defined and registered and from which dependencies can be acquired. Implementation logic 
+for this IOC container can be located in the container directory located within the project root. This IOC
+container relies on providers defined in the providers directory located in projectRoot/app/providers to register dependencies with it for it to be aware of the dependecy relationships that exits throughout the entire application. Finally, to tie everything together and kickstart the application, we have a file named bootstrap.js located within the app/ directory, this file links the providers defined in the providers directory with the container object and voila!!!, uplift fires up it's engines and is now ready to service http requests.  
 
 ## Setup
 
@@ -34,6 +41,8 @@ After clonning the repo to your local machine and moving into the cloned folder,
 All tests should be written in the `__tests__' folder. There's a sample in there.
 
 This starter uses [Parcel](https://parceljs.org/getting_started.html) as the bundler. It is much simpler that WebPack and the others
+
+This API utilises a postgres database for data persistence. To successfully integrate the database with the application, its is therefore, required that you have a database setup. You then need to create a .env file at the project root where you will specify database a connection string environment variable named DATABASE_URL with its values containing required connection details to access the database. A sample configuration file has been provided in the project root with examples on how to go about this.
 
 #### Hints
 
@@ -57,11 +66,15 @@ First, you can send a mail to buildforsdg@andela.com to indicate your interest, 
 
 ## Acknowledgements
 
-Did you use someone else’s code?
-Do you want to thank someone explicitly?
-Did someone’s blog post spark off a wonderful idea or give you a solution to nagging problem?
+The code structure adopted for this project is based off of ideas put forward by the authors of the blog posts
+listed below.
 
-It's powerful to always give credit.
+https://medium.com/@magnusjt/ioc-container-in-nodejs-e7aea8a89600
+
+https://codewithhugo.com/express-request-response-mocking/
+
+https://www.albertgao.xyz/2017/05/24/how-to-test-expressjs-with-jest-and-supertest/
+
 
 ## LICENSE
 MIT
