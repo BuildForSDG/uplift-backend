@@ -1,37 +1,40 @@
 {
   "name": "uplift-backend",
   "version": "0.0.1",
+  "private": false,
   "description": "An Express API implementation for the uplift web app",
   "keywords": [
     "js-starter",
     "boilerplate"
   ],
-  "private": false,
+  "homepage": "https://github.com/BuildForSDG/js-starter#readme",
+  "bugs": {
+    "url": "https://github.com/BuildForSDG/js-starter/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BuildForSDG/js-starter.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Build For SDG",
+    "email": "buildforsdg@andela.com"
+  },
   "main": "server.js",
   "types": "dist/index.d.ts",
   "directories": {
     "test": "__tests__"
   },
   "scripts": {
+    "lint": "eslint \"src/**/*.js\"",
     "start": "nodemon server",
     "test": "jest",
-    "test:watch": "jest --watch",
     "test:cover": "jest --coverage",
-    "lint": "eslint \"src/**/*.js\""
+    "test:watch": "jest --watch"
   },
-  "author": {
-    "name": "Build For SDG",
-    "email": "buildforsdg@andela.com"
-  },
-  "homepage": "https://github.com/BuildForSDG/js-starter#readme",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/BuildForSDG/js-starter.git"
-  },
-  "bugs": {
-    "url": "https://github.com/BuildForSDG/js-starter/issues"
-  },
-  "license": "MIT",
+  "browserslist": [
+    "last 1 Chrome versions"
+  ],
   "dependencies": {
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
@@ -48,8 +51,5 @@
     "nodemon": "^2.0.4",
     "parcel-bundler": "^1.12.4",
     "supertest": "^4.0.2"
-  },
-  "browserslist": [
-    "last 1 Chrome versions"
-  ]
+  }
 }
