@@ -10,8 +10,8 @@ Once this repo has been setup on Codacy by the TTL, replace the above badge with
 
 This is a simple JavaScript starter repo template for setting up your project. The setup contains:
 
--  Jest: For runnung tests. We strongly recommend that JavaScript projects use Jest.
--  Eslint & Prettier: For formatting code to match ESlint AirBnB coding standard. You might need to install the ESlint and Prettier plugins for your code editor to make the most of these utilities.
+-   Jest: For runnung tests. We strongly recommend that JavaScript projects use Jest.
+-   Eslint & Prettier: For formatting code to match ESlint AirBnB coding standard. You might need to install the ESlint and Prettier plugins for your code editor to make the most of these utilities.
 
 ## Why
 
@@ -43,17 +43,17 @@ This API utilises a postgres database for data persistence. To successfully inte
 
 ### Hints
 
--  Run `npm install` or `yarn install` to get started. We'll assume you are using Yarn.
+-   Run `npm install` or `yarn install` to get started. We'll assume you are using Yarn.
 
 -  Install additional dependencies: `yarn add <dependency-name> [-D]`.
 
--  Run tests: `yarn test`.
+-   Run tests: `yarn test`.
 
--  Run tests with test coverage info: `yarn test:cover`.
+-   Run tests with test coverage info: `yarn test:cover`.
 
--  Check the codebase for proper syntax and formatting compliance: `yarn lint`.
+-   Check the codebase for proper syntax and formatting compliance: `yarn lint`.
 
--  Run the app in local dev mode: `yarn start`. This starts the app in development mode making it available at 
+-   Run the app in local dev mode: `yarn start`. This starts the app in development mode making it available at 
 <http://localhost:port>. The port is the one specified in the .env file containing your environment variables.
 
 ## Authors
@@ -62,7 +62,7 @@ List the team behind this project. Their names linked to their Github, LinkedIn,
 
 ## Contributing
 If this project sounds interesting to you and you'd like to contribute, thank you!
-First, you can send a mail to <buildforsdg@andela.com> to indicate your interest, why you'd like to support and what forms of support you can bring to the table, but here are areas we think we'd need the most help in this project :
+First, you can send a mail to <mailto:buildforsdg@andela.com> to indicate your interest, why you'd like to support and what forms of support you can bring to the table, but here are areas we think we'd need the most help in this project :
 1.  area one (e.g this app is about human trafficking and you need feedback on your roadmap and feature list from the private sector / NGOs)
 2.  area two (e.g you want people to opt-in and try using your staging app at staging.project-name.com and report any bugs via a form)
 3.  area three (e.g here is the zoom link to our end-of sprint webinar, join and provide feedback as a stakeholder if you can).
