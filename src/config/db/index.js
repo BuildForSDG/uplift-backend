@@ -11,7 +11,7 @@ const pgp = require('pg-promise')({
 const cn = {
   host: process.env.POSTGRES_HOST,
   port: process.env.POSTGRES_PORT,
-  database: process.ev.POSTGRES_DB',
+  database: process.ev.POSTGRES_DB,
   user: 'postgres',
   password: 'pgadmin'
 }
