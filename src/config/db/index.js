@@ -8,7 +8,13 @@ const pgp = require('pg-promise')({
   }
 });
 // Preparing the connection details:
-const cn = process.env.DATABASE_URL;
+const cn = {
+  host: process.env.POSTGRES_HOST,
+  port: process.env.POSTGRES_PORT,
+  database: process.ev.POSTGRES_DB',
+  user: 'postgres',
+  password: 'pgadmin'
+}
 
 // Creating a new database instance from the connection details:
 const db = pgp(cn);
