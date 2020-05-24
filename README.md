@@ -59,7 +59,7 @@ This API utilises a postgres database for data persistence. To successfully inte
 
 ## Authors
 
-List the team behind this project. Their names linked to their Github, LinkedIn, or Twitter accounts should siffice. Ok to signify the role they play in the project, including the TTL and mentor.
+[Victor Baraka Oyuga](https://github.com/barakaVictor)
 
 ## Contributing
 If this project sounds interesting to you and you'd like to contribute, thank you!
