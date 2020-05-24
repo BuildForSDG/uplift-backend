@@ -11,6 +11,7 @@ const Container = require('./container');
 module.exports = () => {
   const container = new Container();
   require('./app/providers/appprovider')(container);
+  require('./app/providers/databaseprovider')(container);
   return container;
 };
 

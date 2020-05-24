@@ -3,6 +3,9 @@
 // Loading and initializing the library:
 const pgp = require('pg-promise')({
   // Initialization Options
+  query(e) {
+    console.log('QUERY:', e.query);
+  }
 });
 // Preparing the connection details:
 const cn = process.env.DATABASE_URL;

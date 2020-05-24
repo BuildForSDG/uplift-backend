@@ -1,7 +1,6 @@
 const { mockRequest, mockResponse, mockNext } = require('../utils/httpmocks');
 const DefaultController = require('../../src/app/controllers/default');
 
-const defaultController = new DefaultController({});
 
 describe('DefaultController', () => {
   describe('index', () => {
@@ -14,10 +13,18 @@ describe('DefaultController', () => {
       next = mockNext();
     });
 
-    it('Returns 200 HTTP response code with the right response message', async () => {
-      await defaultController.index(request, response, next);
-      expect(response.status).toHaveBeenCalledWith(200);
-      expect(response.json).toHaveBeenCalledWith({ message: 'Hello from uplift bare skeleton backend' });
+    it('Returns 200 HTTP response code with the right response message', (done) => {
+      const defaultController = new DefaultController({
+        model: {
+          testDbConnection: jest.fn().mockReturnValue(Promise.resolve())
+        }
+      });
+      return defaultController.index(request, response, next)
+        .then((resp) => {
+          expect(resp.status).toHaveBeenCalledWith(200);
+          expect(resp.json).toHaveBeenCalledWith({ message: 'Hello from uplift bare skeleton backend' });
+          done();
+        }).catch((error) => done(error));
     });
   });
 });

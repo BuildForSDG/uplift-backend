@@ -1,14 +1,20 @@
-/* eslint-disable class-methods-use-this */
 class BaseModel {
   /**
      *
      * @param {Object} obj - an object with the dependencies for this model.
      *
+     * This is the base implementation of a model that maps to database table
      * A dependency with the key 'db' is required and it represents the current database instance.
      */
-  constructor({ db, table }) {
+  constructor({ db, name }) {
     this.db = db;
-    this.table = () => (table || this.name.toLowerCase());
+    this.table = name || this.constructor.name.toLowerCase();
+    this.init = this.init.bind(this);
+    this.all = this.all.bind(this);
+    this.find = this.find.bind(this);
+    this.save = this.save.bind(this);
+    this.delete = this.delete.bind(this);
+    this.testDbConnection = this.testDbConnection.bind(this);
   }
 
   /**
@@ -19,16 +25,24 @@ class BaseModel {
      * from this model together with the properties for the column. The object returned
      * should have key/value pairs for the column name and its properties respectively
      */
-  fields() {
+
+  async init() {
+    const obj = {
+      id: 'SERIAL PRIMARY KEY',
+      ...this.attributes
+    };
+    const columns = () => Object.keys(
+      obj
+    ).map((key) => `${key} ${obj[key]}`);
+
+    return this.db.any(`CREATE TABLE ${this.table} (${columns().join(',')})`);
   }
 
   /**
      * Returns all the records from the currently attached database table
      */
   async all() {
-    return [
-
-    ];
+    return this.db.any('SELECT * FROM $1', [this.table]);
   }
 
   /**
@@ -41,7 +55,7 @@ class BaseModel {
      */
 
   async find(obj) {
-    return obj;
+    return this.db.any('SELECT * FROM $1 WHERE $2:name = $2:list', [this.table, obj]);
   }
 
   /**
@@ -51,7 +65,26 @@ class BaseModel {
      * Inserts a record in the current database instance
      */
   async save(obj) {
-    return obj;
+    return this.db.none('INSERT INTO $1:name($2:name) VALUES($2:list)', [this.table, obj]);
+  }
+
+  /**
+     *
+     * @param {*} obj - The object to delete from the database
+     *
+     * Deletes a record from the attached database table
+     */
+  async delete(obj) {
+    return this.db.none('DELETE FROM $1:name WHERE $2:name = $2:list', [this.table, obj]);
+  }
+
+  async testDbConnection() {
+    return this.db.connect()
+      .then((obj) => {
+        obj.done();
+        return true;
+      })
+      .catch((error) => { throw error; });
   }
 }
 

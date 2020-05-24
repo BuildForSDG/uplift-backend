@@ -16,6 +16,7 @@ module.exports = {
   rules: {
     'no-console': 'off',
     'comma-dangle': ['error', 'never'],
-    'no-param-reassign': ['error', { props: false }]
+    'no-param-reassign': ['error', { props: false }],
+    "linebreak-style": 0
   }
 };

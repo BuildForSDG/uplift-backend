@@ -1,6 +1,6 @@
 class BaseController {
   constructor({ model }) {
-    this.model = () => model || {};
+    this.model = model;
     this.index = this.index.bind(this);
     this.create = this.create.bind(this);
     this.read = this.read.bind(this);
