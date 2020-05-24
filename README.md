@@ -2,6 +2,7 @@ An Express backend API for the uplift loans web app.
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/b3c40605563f4428a40aeb98552f395f)](https://app.codacy.com/gh/BuildForSDG/uplift-backend?utm_source=github.com&utm_medium=referral&utm_content=BuildForSDG/uplift-backend&utm_campaign=Badge_Grade_Settings)
 [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/4fa2aa22b0b34b589995fa839066e76e)](https://www.codacy.com/gh/BuildForSDG/uplift-backend?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=BuildForSDG/uplift-backend&amp;utm_campaign=Badge_Coverage)
+![Uplift Backend CI Workflow](https://github.com/BuildForSDG/uplift-backend/workflows/Uplift%20Backend%20CI%20Workflow/badge.svg?branch=master)
 
 ## About
 
