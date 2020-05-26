@@ -23,7 +23,7 @@ class BaseController {
       .then((obj) => response.status(201).json({
         message: 'Object successfully created',
         data: obj
-      }).catch((error) => next(error)));
+      })).catch((error) => next(error));
   }
 
   read(request, response, next) {

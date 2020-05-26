@@ -26,5 +26,18 @@ describe('DefaultController', () => {
           done();
         }).catch((error) => done(error));
     });
+
+    it('Delegates to express for error handling', (done) => {
+      const defaultController = new DefaultController({
+        model: {
+          testDbConnection: jest.fn().mockReturnValue(Promise.reject())
+        }
+      });
+      return defaultController.index(request, response, next)
+        .then(() => {
+          expect(next.mock.calls.length).toBe(1);
+          done();
+        }).catch((error) => done(error));
+    });
   });
 });

@@ -1,5 +1,5 @@
-exports.mockRequest = () => ({
-
+exports.mockRequest = (obj) => ({
+  ...obj
 });
 
 exports.mockResponse = () => {
