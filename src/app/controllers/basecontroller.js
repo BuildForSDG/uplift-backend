@@ -8,24 +8,51 @@ class BaseController {
     this.delete = this.delete.bind(this);
   }
 
-  index() {
-    return this.model.all();
+  async index(_request, response, next) {
+    return this.model.all()
+      .then((objs) => response.status(200).json({
+        message: 'Success',
+        data: objs
+      }))
+      .catch((error) => next(error));
   }
 
-  create(obj) {
-    return this.model.save(obj);
+  async create(request, response, next) {
+    const { body } = request;
+    return this.model.save(body)
+      .then((obj) => response.status(201).json({
+        message: 'Object successfully created',
+        data: obj
+      }).catch((error) => next(error)));
   }
 
-  read(obj) {
-    return this.model.find(obj);
+  read(request, response, next) {
+    const { params } = request;
+    return this.model.find(params)
+      .then((result) => (result
+        ? response.status(200).json({
+          data: result
+        })
+        : response.status(404).json({
+          message: 'Resource not found'
+        }))).catch((error) => next(error));
   }
 
-  update(obj) {
-    return this.model.update(obj);
+  update(request, response, next) {
+    const { body } = request;
+    return this.model.update(body)
+      .then((obj) => response.status(201).json({
+        message: 'Object updated successfully',
+        data: obj
+      })).catch((error) => next(error));
   }
 
-  delete(obj) {
-    return this.model.delete(obj);
+  delete(request, response, next) {
+    const { params } = request;
+    return this.model.delete(params)
+      .then(() => response.status(200).json({
+        message: 'Object successfully deleted'
+      })).catch((error) => next(error));
   }
 }
 

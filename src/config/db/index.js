@@ -14,7 +14,7 @@ const cn = {
   database: 'uplift',
   user: 'postgres',
   password: 'pgadmin'
-}
+};
 
 // Creating a new database instance from the connection details:
 const db = pgp(cn);

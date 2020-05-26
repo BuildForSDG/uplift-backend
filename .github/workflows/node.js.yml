@@ -17,7 +17,7 @@ jobs:
     container: node:10.18-jessie
 
     services:
-      postgrs:
+      postgres:
         image: postgres
         env: 
           POSTGRES_PASSWORD: pgadmin
