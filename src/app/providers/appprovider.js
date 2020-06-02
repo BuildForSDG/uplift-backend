@@ -2,7 +2,7 @@ const express = require('express');
 
 const app = express();
 const defaultErrorHandler = require('../middleware/defaulterrorhandler');
-const TestModel = require('../models/testmodel');
+const UserModel = require('../models/usermodel');
 const AppController = require('../controllers/default');
 const indexRouter = require('../routes/index');
 
@@ -15,8 +15,8 @@ const indexRouter = require('../routes/index');
  * with the IOC container.
  */
 const AppProvider = (container) => {
-  container.service('TestModel', () => new TestModel({ db: container.db }));
-  container.service('AppController', () => new AppController({ model: container.TestModel }));
+  container.service('UserModel', () => new UserModel({ db: container.db }));
+  container.service('AppController', () => new AppController({ model: container.UserModel }));
   container.service('IndexRouter', () => indexRouter(container.AppController));
 
   container.service('App', () => {

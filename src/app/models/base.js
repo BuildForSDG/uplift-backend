@@ -8,7 +8,7 @@ class BaseModel {
      */
   constructor({ db, name }) {
     this.db = db;
-    this.table = name || this.constructor.name.toLowerCase();
+    this.table = name || `${this.constructor.name.toLowerCase()}s`;
     this.init = this.init.bind(this);
     this.all = this.all.bind(this);
     this.find = this.find.bind(this);
@@ -33,9 +33,16 @@ class BaseModel {
     };
     const columns = () => Object.keys(
       obj
-    ).map((key) => `${key} ${obj[key]}`);
+    ).map((key) => {
+      if (key === 'foreign_key') {
+        return `${obj[key]}`;
+      }
+      return `${key} ${obj[key]}`;
+    });
 
-    return this.db.any(`CREATE TABLE ${this.table} (${columns().join(',')})`);
+    const query = `CREATE TABLE IF NOT EXISTS ${this.table} (${columns().join(', ')})`;
+
+    return this.db.any(query);
   }
 
   /**

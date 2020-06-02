@@ -1,22 +1,27 @@
 #!/bin/env node
 
-const fs = require('fs');
-const path = require('path');
+// A simple script to create database tables
+
 const container = require('./src/bootstrap')();
 
-const normalizedPath = path.join(__dirname, '/src/app/models');
-
-const { db } = container;
+/**
+ * Registering models for automatic table creation
+ * The order in which models are registered matters. If a model
+ * has a parent, the parent needs to be registered fast
+ */
+const models = [
+  container.UserModel
+];
 
 /**
  * Automatically run create table queries against the database
- * This is a rather buggy module
  */
 (() => {
-  fs.readdirSync(normalizedPath).forEach((file) => {
-    if (file !== 'base.js') {
-      const Model = require(`${normalizedPath}/${file}`);
-      new Model({ db }).init();
+  models.forEach(async (model) => {
+    try {
+      await model.init();
+    } catch (error) {
+      console.error(error);
     }
   });
 })();

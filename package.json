@@ -31,10 +31,9 @@
     "test": "jest",
     "test:cover": "jest --coverage --runInBand --detectOpenHandles",
     "test:watch": "jest --watch",
-    "manage": "node manage.js"
+    "migrate": "node manage.js"
   },
   "dependencies": {
-    "codacy-coverage": "^3.4.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "pg-promise": "^10.5.6"
