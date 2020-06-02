@@ -1,4 +1,5 @@
 const express = require('express');
+const bodyparser = require('body-parser');
 
 const app = express();
 const defaultErrorHandler = require('../middleware/defaulterrorhandler');
@@ -21,6 +22,7 @@ const AppProvider = (container) => {
 
   container.service('App', () => {
     app.use(defaultErrorHandler);
+    app.use(bodyparser.json());
     app.use('/', container.IndexRouter);
     return app;
   });

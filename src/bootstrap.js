@@ -12,6 +12,7 @@ module.exports = () => {
   const container = new Container();
   require('./app/providers/appprovider')(container);
   require('./app/providers/databaseprovider')(container);
+  require('./app/providers/authprovider')(container);
   return container;
 };
 
