@@ -12,6 +12,7 @@ class BaseModel {
     this.init = this.init.bind(this);
     this.all = this.all.bind(this);
     this.find = this.find.bind(this);
+    this.findOne = this.findOne.bind(this);
     this.save = this.save.bind(this);
     this.delete = this.delete.bind(this);
     this.testDbConnection = this.testDbConnection.bind(this);
@@ -62,7 +63,11 @@ class BaseModel {
      */
 
   async find(obj) {
-    return this.db.any('SELECT * FROM $1 WHERE $2:name = $2:list', [this.table, obj]);
+    return this.db.any('SELECT * FROM $1:name WHERE $2:name = $2:list', [this.table, obj]);
+  }
+
+  async findOne(obj) {
+    return this.db.oneOrNone('SELECT * FROM $1:name WHERE $2:name = $2:list', [this.table, obj]);
   }
 
   /**
