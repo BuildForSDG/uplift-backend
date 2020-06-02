@@ -85,6 +85,13 @@ class BaseModel {
     return this.db.none('DELETE FROM $1:name WHERE $2:name = $2:list', [this.table, obj]);
   }
 
+  /**
+   * Drop the attached database table
+   */
+  async tearDown() {
+    return this.db.none('DROP TABLE $1:name', [this.table]);
+  }
+
   async testDbConnection() {
     return this.db.connect()
       .then((obj) => {

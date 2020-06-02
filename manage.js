@@ -7,7 +7,7 @@ const container = require('./src/bootstrap')();
 /**
  * Registering models for automatic table creation
  * The order in which models are registered matters. If a model
- * has a parent, the parent needs to be registered fast
+ * has a parent i.e. has a foreign key constraint, the parent needs to be registered first
  */
 const models = [
   container.UserModel
