@@ -1,0 +1,8 @@
+---
+engines:
+ duplication:
+   exclude_paths:
+     - config/engines.yml
+exclude_paths:
+  - 'spec/**/*'
+  - '**/__tests__/**' 
