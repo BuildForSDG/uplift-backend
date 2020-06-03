@@ -20,8 +20,8 @@ jobs:
       postgres:
         image: postgres
         env: 
-          POSTGRES_PASSWORD: pgadmin
-          POSTGRES_DB: uplift
+          POSTGRES_PASSWORD: pgtester
+          POSTGRES_DB: uplift_test
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
@@ -54,9 +54,11 @@ jobs:
       env:
         # The hostname used to communicate with the PostgreSQL service container
         POSTGRES_HOST: postgres
-        POSTGRES_DB: uplift
-        # The default PostgreSQL port
+        POSTGRES_DB: uplift_test
+        POSTGRES_USER: postgres
+        POSTGRES_USER_PASSWORD: pgtester
         POSTGRES_PORT: 5432
+        NODE_ENV: test
       run: |
         yarn test:cover
         

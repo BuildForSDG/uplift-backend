@@ -8,8 +8,8 @@ const Container = require('./container');
  * application comes to life. All the providers defined in the providers
  * directory need to be required here
  */
-module.exports = () => {
-  const container = new Container();
+module.exports = (options) => {
+  const container = new Container(options);
   require('./app/providers/appprovider')(container);
   require('./app/providers/databaseprovider')(container);
   require('./app/providers/authprovider')(container);
