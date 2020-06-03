@@ -55,6 +55,8 @@ jobs:
         # The hostname used to communicate with the PostgreSQL service container
         POSTGRES_HOST: postgres
         POSTGRES_DB: uplift_test
+        POSTGRES_USER: postgres
+        POSTGRES_USER_PASSWORD: pgtester
         POSTGRES_PORT: 5432
         NODE_ENV: test
       run: |
