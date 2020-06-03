@@ -2,7 +2,4 @@
 engines:
  duplication:
    exclude_paths:
-     - config/engines.yml
-exclude_paths:
-  - 'spec/**/*'
-  - '__tests__/**' 
+     - __tests__/
