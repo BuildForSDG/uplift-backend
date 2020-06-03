@@ -1,9 +1,8 @@
 const request = require('supertest');
-const createContainer = require('../../src/bootstrap');
+const { container } = require('../utils/setup');
 
 describe('GET /', () => {
   it("should return 'Hello from uplift bare skeleton backend'", async (done) => {
-    const container = createContainer();
     const app = container.App;
     const response = await request(app)
       .get('/');

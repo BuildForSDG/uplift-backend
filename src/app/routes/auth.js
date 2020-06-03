@@ -9,8 +9,8 @@ const router = express.Router();
  *
  * @return {router} - an instance of the express router object;
  */
-module.exports = (controller) => {
+module.exports = ({ controller, middleware }) => {
   router.post('/login', controller.login);
-  router.post('/signup', controller.create);
+  router.post('/signup', middleware.usercreationValidator, controller.create);
   return router;
 };

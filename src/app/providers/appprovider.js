@@ -3,6 +3,8 @@ const bodyparser = require('body-parser');
 
 const app = express();
 const defaultErrorHandler = require('../middleware/defaulterrorhandler');
+const validator = require('../middleware/validate');
+
 
 /**
  *
@@ -13,6 +15,7 @@ const defaultErrorHandler = require('../middleware/defaulterrorhandler');
  * with the IOC container.
  */
 const AppProvider = (container) => {
+  container.service('Validator', () => validator);
   container.service('App', () => {
     app.use(defaultErrorHandler);
     app.use(bodyparser.json());
@@ -22,7 +25,7 @@ const AppProvider = (container) => {
     * Ideally no route should be defined here.
     *
     */
-    app.use('/', (_request, response) => (
+    app.get('/', (_request, response) => (
       response.status(200).json({
         message: 'Hello from uplift bare skeleton backend'
       })));
