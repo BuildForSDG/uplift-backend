@@ -3,9 +3,6 @@ const bodyparser = require('body-parser');
 
 const app = express();
 const defaultErrorHandler = require('../middleware/defaulterrorhandler');
-const UserModel = require('../models/usermodel');
-const AppController = require('../controllers/default');
-const indexRouter = require('../routes/index');
 
 /**
  *
@@ -16,16 +13,20 @@ const indexRouter = require('../routes/index');
  * with the IOC container.
  */
 const AppProvider = (container) => {
-  container.service('UserModel', () => new UserModel({ db: container.db }));
-  container.service('AppController', () => new AppController({ model: container.UserModel }));
-  container.service('IndexRouter', () => indexRouter(container.AppController));
-
   container.service('App', () => {
     app.use(defaultErrorHandler);
     app.use(bodyparser.json());
-    app.use('/', container.IndexRouter);
+
+    /**
+    * Default initial route intended to test the application.
+    * Ideally no route should be defined here.
+    *
+    */
+    app.use('/', (_request, response) => (
+      response.status(200).json({
+        message: 'Hello from uplift bare skeleton backend'
+      })));
     return app;
   });
 };
-
 module.exports = AppProvider;
