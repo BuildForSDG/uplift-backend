@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyparser = require('body-parser');
+const cors = require('cors');
 
 const app = express();
 const defaultErrorHandler = require('../middleware/defaulterrorhandler');
@@ -18,6 +19,7 @@ const AppProvider = (container) => {
   container.service('Validator', () => validator);
   container.service('App', () => {
     app.use(defaultErrorHandler);
+    app.use(cors());
     app.use(bodyparser.json());
 
     /**
